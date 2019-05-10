@@ -3,10 +3,15 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel='stylesheet' href={{asset('css/app.css')}}>
+        <link rel="stylesheet" type="text/css" href="{{ asset('/css/app.css') }}">
         <title>{{config('app.name'), 'Perpustakaan'}}</title>
     </head>
     <body>
-        @yield('content')
+        @include('layouts.navbar')
+        
+        <div class="container">
+            @yield('content')
+        </div>
+
     </body>
 </html>
