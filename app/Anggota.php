@@ -8,4 +8,5 @@ class Anggota extends Model
 {
     protected $table = 'anggota';
     public $primarykey= 'ID_anggota';
+    public $timestamps = false;
 }

@@ -36,7 +36,22 @@ class AnggotaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'nama_anggota' => 'required',
+            'jenis_kel' => 'required',
+            'alamat' => 'required',
+            'no_telp' => 'required'
+        ]);
+
+        $anggota = new Anggota;
+        $anggota->nama_anggota = $request->input('nama_anggota');
+        $anggota->jenis_kel = $request->input('jenis_kel');
+        $anggota->alamat = $request->input('alamat');
+        $anggota->no_telp = $request->input('no_telp');
+        $anggota->save();
+
+        return redirect('/anggota')->with('sucess', 'Anggota telah ditambahkan');
+
     }
 
     /**
