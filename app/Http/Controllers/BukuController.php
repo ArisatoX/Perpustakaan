@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Buku;
 
 class BukuController extends Controller
 {
@@ -13,7 +14,9 @@ class BukuController extends Controller
      */
     public function index()
     {
-        //
+        //$anggotas = Anggota::all();
+        $bukus = Buku::orderBy('nama_buku','asc')->paginate();
+        return view('pages.buku')->with('bukus',$bukus);
     }
 
     /**
@@ -23,7 +26,7 @@ class BukuController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.bukucreate');
     }
 
     /**
@@ -34,7 +37,25 @@ class BukuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'nama_buku' => 'required',
+            'ID_kategori' => 'required',
+            'penulis' => 'required',
+            'penerbit' => 'required',
+            'tahun_terbit' => 'required',
+            'stock' => 'required'
+        ]);
+
+        $buku = new Buku;
+        $buku->nama_buku = $request->input('nama_buku');
+        $buku->ID_kategori = $request->input('ID_kategori');
+        $buku->penulis = $request->input('penulis');
+        $buku->penerbit = $request->input('penerbit');
+        $buku->tahun_terbit = $request->input('tahun_terbit');
+        $buku->stock = $request->input('stock');
+        $buku->save();
+
+        return redirect('/buku')->with('success', 'Buku telah ditambahkan');
     }
 
     /**
@@ -45,7 +66,8 @@ class BukuController extends Controller
      */
     public function show($id)
     {
-        //
+        $buku = Buku::find($id);
+        return view('pages.bukushow')->with('buku', $buku);
     }
 
     /**
@@ -56,7 +78,8 @@ class BukuController extends Controller
      */
     public function edit($id)
     {
-        //
+        $buku = Buku::find($id);
+        return view('pages.bukuedit')->with('buku', $buku);
     }
 
     /**
@@ -68,7 +91,25 @@ class BukuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'nama_buku' => 'required',
+            'ID_kategori' => 'required',
+            'penulis' => 'required',
+            'penerbit' => 'required',
+            'tahun_terbit' => 'required',
+            'stock' => 'required'
+        ]);
+
+        $buku = Buku::find($id);
+        $buku->nama_buku = $request->input('nama_buku');
+        $buku->ID_kategori = $request->input('ID_kategori');
+        $buku->penulis = $request->input('penulis');
+        $buku->penerbit = $request->input('penerbit');
+        $buku->tahun_terbit = $request->input('tahun_terbit');
+        $buku->stock = $request->input('stock');
+        $buku->save();
+
+        return redirect('/buku')->with('success', 'Buku telah diupdate');
     }
 
     /**
@@ -79,6 +120,9 @@ class BukuController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $buku = Buku::find($id);
+        $buku->delete();
+
+        return redirect('/buku')->with('success', 'Buku telah dihapus');
     }
 }

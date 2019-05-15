@@ -2,24 +2,24 @@
 
 @section('content')
 
-    <h1 style="text-align: center;"> Anggota </h1>
+    <h1 style="text-align: center;"> Buku </h1>
     <br>
 
     <div>
-        <a href="/anggota/create" class="btn btn-success" style="margin-left: 490px; margin-bottom: 50px;"> Tambah Anggota </a>
+        <a href="/buku/create" class="btn btn-success" style="margin-left: 500px; margin-bottom: 50px;"> Tambah Buku </a>
     </div>
 
     <div id="wrapper" style="display: flex;">
 
         <div id="left" style="flex: 0 0 10%;">
-            @if(count($anggotas) > 0)
+            @if(count($bukus) > 0)
                 <div class="list-group">
                     <li class="list-group-item" style="font-size:20px;"> ID </h4>    
                 </div>
 
-                @foreach($anggotas as $anggota)
+                @foreach($bukus as $buku)
                     <div class="list-group">    
-                        <li class="list-group-item" style="font-size:20px;"> {{$anggota->ID_anggota}}</h4>
+                        <li class="list-group-item" style="font-size:20px;"> {{$buku->ID_buku}}</h4>
                     </div>
                 @endforeach
             @else
@@ -29,15 +29,15 @@
         </div>
 
         <div id="right" style="flex: 1;">
-            @if(count($anggotas) > 0)
+            @if(count($bukus) > 0)
                 <div class="list-group">
-                    <li class="list-group-item" style="font-size:20px;"> Nama Anggota </h4>    
+                    <li class="list-group-item" style="font-size:20px;"> Nama Buku </h4>    
                 </div>
 
-                @foreach($anggotas as $anggota)
+                @foreach($bukus as $buku)
                     <div class="list-group">
                            
-                        <li class="list-group-item" style="font-size:20px;"><a href="/anggota/{{$anggota->ID_anggota}}"> {{$anggota->nama_anggota}} </a></h4>
+                        <li class="list-group-item" style="font-size:20px;"><a href="/buku/{{$buku->ID_buku}}"> {{$buku->nama_buku}} </a></h4>
                     </div>
                 @endforeach
             @else
@@ -48,7 +48,7 @@
     </div>
     
     <div class="container" style="padding: 50px; margin-left:400px;">
-        {{$anggotas->links()}}
+        {{$bukus->links()}}
     </div>
 
 @endsection

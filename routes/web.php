@@ -14,5 +14,8 @@
 Route::get('/', 'PagesController@index');
 Route::get('/anggota', 'AnggotaController@index');
 Route::get('/pustakawan', 'PustakawanController@index');
+Route::get('/peminjaman', 'PeminjamanController@index');
+
 
 Route::resource('anggota', 'AnggotaController');
+Route::resource('buku', 'BukuController');

@@ -14,6 +14,7 @@ class AnggotaController extends Controller
      */
     public function index()
     {
+        //$anggotas = Anggota::all()->paginate();
         $anggotas = Anggota::orderBy('nama_anggota','asc')->paginate();
         return view('pages.anggota')->with('anggotas',$anggotas);
     }
@@ -50,7 +51,7 @@ class AnggotaController extends Controller
         $anggota->no_telp = $request->input('no_telp');
         $anggota->save();
 
-        return redirect('/anggota')->with('sucess', 'Anggota telah ditambahkan');
+        return redirect('/anggota')->with('success', 'Anggota telah ditambahkan');
 
     }
 
@@ -74,7 +75,8 @@ class AnggotaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $anggota = Anggota::find($id);
+        return view('pages.anggotaedit')->with('anggota', $anggota);
     }
 
     /**
@@ -86,7 +88,22 @@ class AnggotaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'nama_anggota' => 'required',
+            'jenis_kel' => 'required',
+            'alamat' => 'required',
+            'no_telp' => 'required'
+        ]);
+        
+        $anggota = Anggota::find($id);
+        $anggota->nama_anggota = $request->input('nama_anggota');
+        $anggota->jenis_kel = $request->input('jenis_kel');
+        $anggota->alamat = $request->input('alamat');
+        $anggota->no_telp = $request->input('no_telp');
+        $anggota->save();
+
+        return redirect('/anggota')->with('success', 'Anggota telah diupdate');
+        
     }
 
     /**
@@ -97,6 +114,9 @@ class AnggotaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $anggota = Anggota::find($id);
+        $anggota->delete();
+
+        return redirect('/anggota')->with('success', 'Anggota telah dihapus');
     }
 }
