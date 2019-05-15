@@ -21,6 +21,7 @@ class CreateBukusTable extends Migration
             $table->string('penerbit');
             $table->integer('tahun_terbit');
             $table->integer('stock');
+            $table->foreign('ID_kategori')->references('ID_kategori')->on('kategori')->onDelete('cascade');
 
         });
     }
