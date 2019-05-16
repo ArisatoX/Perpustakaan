@@ -78,6 +78,12 @@ class PeminjamanController extends Controller
         return view('pages.peminjamanedit')->with('peminjaman', $peminjaman);
     }
 
+    public function kembali($id)
+    {
+        $peminjaman = Peminjaman::find($id);
+        return view('pages.peminjamankembali')->with('peminjaman', $peminjaman);
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -103,6 +109,21 @@ class PeminjamanController extends Controller
 
         return redirect('/peminjaman')->with('success', 'Peminjaman telah diupdate');
     }
+
+    public function updatekembali(Request $request, $id)
+    {
+        $this->validate($request, [
+            'tgl_kembali' => 'required'
+        ]);
+
+        $peminjaman = Peminjaman::find($id);
+        $peminjaman->tgl_kembali = $request->input('tgl_kembali');
+        $peminjaman->save();
+
+        return redirect('/peminjaman')->with('success', 'Tanggal kembali telah ditambahkan');
+    }
+
+
 
     /**
      * Remove the specified resource from storage.
