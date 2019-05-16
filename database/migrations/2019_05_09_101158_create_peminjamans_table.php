@@ -22,6 +22,9 @@ class CreatePeminjamansTable extends Migration
             $table->date('batas_kembali');
             $table->date('tgl_kembali');
             $table->integer('denda');
+            $table->foreign('ID_buku')->references('ID_buku')->on('buku')->onDelete('cascade');
+            $table->foreign('ID_anggota')->references('ID_anggota')->on('anggota')->onDelete('cascade');
+            $table->foreign('ID_staff')->references('ID_staff')->on('pustakawan')->onDelete('cascade');
         });
     }
 

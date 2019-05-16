@@ -20,3 +20,4 @@ Route::get('/peminjaman', 'PeminjamanController@index');
 Route::resource('anggota', 'AnggotaController');
 Route::resource('buku', 'BukuController');
 Route::resource('pustakawan', 'PustakawanController');
+Route::resource('peminjaman', 'PeminjamanController');
