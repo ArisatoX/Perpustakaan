@@ -15,7 +15,7 @@ class AnggotaController extends Controller
     public function index()
     {
         //$anggotas = Anggota::all()->paginate();
-        $anggotas = Anggota::orderBy('nama_anggota','asc')->paginate();
+        $anggotas = Anggota::orderBy('ID_anggota','asc')->paginate();
         return view('pages.anggota')->with('anggotas',$anggotas);
     }
 

@@ -14,6 +14,8 @@
         </p>
 
     </div>
+
+    <a href="/anggota/{{$anggota->ID_anggota}}/hitungbuku" class="btn btn-primary"> Hitung Buku yang Dipinjam</a>
     <hr>
     
     <a href="/anggota/{{$anggota->ID_anggota}}/edit" class="btn btn-success"> Edit </a>

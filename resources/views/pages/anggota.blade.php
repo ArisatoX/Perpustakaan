@@ -6,7 +6,9 @@
     <br>
 
     <div>
-        <a href="/anggota/create" class="btn btn-success" style="margin-left: 490px; margin-bottom: 50px;"> Tambah Anggota </a>
+        <a href="/anggota/create" class="btn btn-success" style="margin-left: 330px; margin-bottom: 50px;"> Tambah Anggota </a>
+        <a href="/anggota/dendasemua" class="btn btn-danger" style=" margin-bottom: 50px;"> Denda Semua Anggota </a>
+        <a href="/anggota/peminjamterbanyak" class="btn btn-info" style=" margin-bottom: 50px;"> Peminjam Terbanyak </a>
     </div>
 
     <div id="wrapper" style="display: flex;">

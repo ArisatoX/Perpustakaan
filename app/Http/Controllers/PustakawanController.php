@@ -14,7 +14,7 @@ class PustakawanController extends Controller
      */
     public function index()
     {
-        $pustakawans = Pustakawan::orderBy('nama_staff','asc')->paginate();
+        $pustakawans = Pustakawan::orderBy('ID_staff','asc')->paginate();
         return view('pages.pustakawan')->with('pustakawans',$pustakawans);
     }
 
@@ -120,4 +120,8 @@ class PustakawanController extends Controller
 
         return redirect('/pustakawan')->with('success', 'Pustakawan telah dihapus');
     }
+
+
+
+
 }

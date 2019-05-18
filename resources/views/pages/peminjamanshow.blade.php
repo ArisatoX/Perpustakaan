@@ -19,6 +19,8 @@
     </div>
 
     <a href="/peminjaman/{{$peminjaman->ID_pinjam}}/kembali" class="btn btn-success"> Pengembalian </a>
+    <a href="/peminjaman/{{$peminjaman->ID_pinjam}}/hitungbataskembali" class="btn btn-primary"> Hitung Batas Kembali </a>
+    <a href="/peminjaman/{{$peminjaman->ID_pinjam}}/hitungdenda" class="btn btn-danger"> Hitung Denda Sementara</a>
 
     <hr>
     

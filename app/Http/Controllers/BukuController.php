@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Buku;
+use App\Http\Controllers\DB;
 
 class BukuController extends Controller
 {
@@ -125,4 +126,5 @@ class BukuController extends Controller
 
         return redirect('/buku')->with('success', 'Buku telah dihapus');
     }
+
 }

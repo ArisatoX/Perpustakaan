@@ -15,6 +15,9 @@
         </p>
 
     </div>
+
+    <a href="/pustakawan/{{$pustakawan->ID_staff}}/banyakpelayanan" class="btn btn-info"> Banyak Pelayanan </a>
+
     <hr>
     
     <a href="/pustakawan/{{$pustakawan->ID_staff}}/edit" class="btn btn-success"> Edit </a>

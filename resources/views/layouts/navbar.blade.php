@@ -18,7 +18,11 @@
         </li>
 
         <li class="nav-item">
-                <a class="nav-link" href="/pustakawan">Pustakawan</a>
+            <a class="nav-link" href="/pustakawan">Pustakawan</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="/kategori">Kategori</a>
         </li>
 
         <li class="nav-item">

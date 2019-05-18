@@ -6,7 +6,8 @@
     <br>
 
     <div>
-        <a href="/peminjaman/create" class="btn btn-success" style="margin-left: 475px; margin-bottom: 50px;"> Tambah Peminjaman </a>
+        <a href="/peminjaman/create" class="btn btn-success" style="margin-left: 390px; margin-bottom: 50px;"> Tambah Peminjaman </a>
+        <a href="/peminjaman/pinjamhariini" class="btn btn-primary" style="margin-bottom: 50px;"> Peminjaman Hari Ini </a>
     </div>
 
     <div id="wrapper" style="display: flex;">

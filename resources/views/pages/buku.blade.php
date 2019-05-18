@@ -6,7 +6,10 @@
     <br>
 
     <div>
-        <a href="/buku/create" class="btn btn-success" style="margin-left: 500px; margin-bottom: 50px;"> Tambah Buku </a>
+        <a href="/buku/create" class="btn btn-success" style="margin-left: 280px; margin-bottom: 50px;"> Tambah Buku </a>
+        <a href="/buku/belumkembali" class="btn btn-warning" style=" margin-bottom: 50px;"> Belum Kembali </a>
+        <a href="/buku/hitungbukutelat" class="btn btn-danger" style=" margin-bottom: 50px;"> Belum Kembali dan Terlambat </a>
+        <a href="/buku/stockkosong" class="btn btn-info" style=" margin-bottom: 50px;"> Stock Kosong </a>
     </div>
 
     <div id="wrapper" style="display: flex;">
